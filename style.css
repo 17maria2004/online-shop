@@ -122,6 +122,47 @@ nav{
     display: none;
 }
 
+.header__container{
+    padding-top: 0;
+    display: grid;
+    overflow: hidden;
+}
+
+.header__image{
+    grid-area: 1/1/2/2;
+}
+
+.header__image img{
+    max-width: 900px;
+    margin-left: auto;
+}
+
+.header__content{
+    grid-area: 1/1/2/2;
+    display: flex;
+    align-items: center;
+}
+
+.header__content > div {
+    max-width: 500px;/*aam neshteghil aa hay l carreau l blury*/
+    padding: 4rem 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.header__content h1{
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--primary-color);
+}
+
+.header__content p{
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
 
 @media(min-width: 768px){
     nav{
@@ -174,7 +215,7 @@ nav{
 
     .nav__search input{
         padding-block: 5px;
-        outline: none;
+        outline: none;/*Removes(the blue border you see when you click inside an input).*/
         border: none;
         width: 0;
         font-size: 1rem;
