@@ -33,3 +33,25 @@ navLinks.addEventListener("click", (e) => {
     navLinks.classList.remove("open");
     menuBtnIcon.setAttribute("class", "ri-menu-line");
 });
+
+const navSearch = document.getElementById("nav-search");
+navSearch.addEventListener("click", (e) => {
+    navSearch.classList.toggle("open");
+});
+
+
+const ScrollRevealOption = {
+    distance: "50px",
+    origin : "bottom",
+    duration: 1000,
+};
+
+ScrollReveal().reveal(".header__image img", {
+    ...ScrollRevealOption,
+    origin : "right",
+});
+
+ScrollReveal().reveal(".header__content div", {
+    duration : 1000,
+    delay : 500,
+});
