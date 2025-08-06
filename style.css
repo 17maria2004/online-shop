@@ -263,4 +263,22 @@ nav{
         color: var(--text-dark);
         cursor: pointer;
     }
+
+    .deals__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .deals__card:nth-child(1){
+        grid-column: 1/4;
+    }
+}
+
+@media(min-width:1024px){
+    .deals__container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .deals__card:nth-child(1){
+        grid-column: unset;
+    }
 }

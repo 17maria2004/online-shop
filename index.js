@@ -4,21 +4,21 @@ const menuBtnIcon = menuBtn.querySelector("i"); /*From inside the menuBtn elemen
 
 
 const navData = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Products", href: "#products" },
-  { name: "Contact", href: "#contact" }
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Products", href: "#products" },
+    { name: "Contact", href: "#contact" }
 ];
 
 
 // Dynamically create nav links from JSON
 navData.forEach(item => {
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.href = item.href;
-  a.textContent = item.name;
-  li.appendChild(a);
-  navLinks.appendChild(li);
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = item.href;
+    a.textContent = item.name;
+    li.appendChild(a);
+    navLinks.appendChild(li);
 });
 
 
@@ -26,7 +26,7 @@ menuBtn.addEventListener("click", (e) => {
     navLinks.classList.toggle("open");
 
     const isOpen = navLinks.classList.contains("open");
-    menuBtnIcon.setAttribute("class", isOpen? "ri-close-line" : "ri-menu-line");
+    menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
 });
 
 navLinks.addEventListener("click", (e) => {
@@ -42,18 +42,18 @@ navSearch.addEventListener("click", (e) => {
 
 const ScrollRevealOption = {
     distance: "50px",
-    origin : "bottom",
+    origin: "bottom",
     duration: 1000,
 };
 
 ScrollReveal().reveal(".header__image img", {
     ...ScrollRevealOption,
-    origin : "right",
+    origin: "right",
 });
 
 ScrollReveal().reveal(".header__content div", {
-    duration : 1000,
-    delay : 500,
+    duration: 1000,
+    delay: 500,
 });
 
 ScrollReveal().reveal("header__content h1", {
@@ -63,26 +63,52 @@ ScrollReveal().reveal("header__content h1", {
 
 ScrollReveal().reveal("header__content p", {
     ...ScrollRevealOption,
-    delay : 1500,
+    delay: 1500,
 });
+
 
 /*kermel l hot deals ta aamelun dynamically */
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("deals.json")
-    .then((response) => response.json())
+    fetch("deals.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const container = document.querySelector(".deals__container");
+
+            /*looping through each item (deal)*/
+            data.forEach((deal) => {
+                const card = document.createElement("div");
+                card.className = "deals__card";
+                card.innerHTML = `
+                <span><i class="${deal.icon}"></i></span>
+                <h4>${deal.title}</h4>
+                <p>${deal.description}</p>
+                `;
+                container.appendChild(card);
+            });
+
+            ScrollReveal().reveal(".deals__card", {
+                ...ScrollRevealOption,
+                interval: 500,
+            });
+        });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("about.json")
+    .then((res) => res.json())
     .then((data) => {
-      const container = document.querySelector(".deals__container");
-    
-      /*looping through each item (deal)*/
-      data.forEach((deal) => {
-        const card = document.createElement("div");
-        card.className = "deals__card";
-        card.innerHTML = `
-          <span><i class="${deal.icon}"></i></span>
-          <h4>${deal.title}</h4>
-          <p>${deal.description}</p>
-        `;
-        container.appendChild(card);
-      });
+      const aboutContainer = document.querySelector(".about__container");
+
+      const content = `
+        <div class="about__header">
+          <div>
+            <h2 class="section__header">${data.heading}</h2>
+            <p class="section__description">${data.description}</p>
+          </div>
+        </div>
+      `;
+
+      aboutContainer.innerHTML = content;
     });
 });
