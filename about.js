@@ -1,16 +1,24 @@
-const ScrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
+const AboutScrollRevealOption = {
+    distance: "50px",
+    origin: "bottom",
+    duration: 1000,
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("about.json")
-    .then((res) => res.json())
-    .then((data) => {
-      const aboutContainer = document.querySelector(".about__container");
+    const aboutContainer = document.querySelector(".about__container");
+    if (!aboutContainer) return;
 
-      const aboutHTML = `
+    fetch("about.json")
+        .then((res) => {
+            if (!res.ok) throw new Error("Failed to load about.json");
+            return res.json();
+        })
+        .then((data) => {
+            const aboutHTML = `
+        <h2 class="section__header">${data.heading}</h2>
+        <p class="section__description">${data.description}</p>
+        <button class="about__btn">Learn More</button>
+
         <div class="about__content">
           <div class="about__image">
             <img src="${data.image}" alt="about" />
@@ -27,11 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      aboutContainer.innerHTML = aboutHTML;
+            aboutContainer.innerHTML = aboutHTML;
 
-      ScrollReveal().reveal(".about__card", {
-        ...ScrollRevealOption,
-        interval: 300,
-      });
-    });
+            ScrollReveal().reveal(".about__image img", {
+                origin: "right",
+                distance: "100px",
+                duration: 1000,
+            });
+
+            ScrollReveal().reveal(".about__card", {
+                origin: "bottom",
+                distance: "50px",
+                duration: 800,
+                interval: 200,
+            });
+        })
+        .catch((error) => console.error("Error loading About section:", error));
 });
