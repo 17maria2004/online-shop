@@ -4,10 +4,10 @@ const menuBtnIcon = menuBtn.querySelector("i"); /*From inside the menuBtn elemen
 
 
 const navData = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Products", href: "#products" },
-    { name: "Contact", href: "#contact" }
+    { name: "Home", href: "index.html" },
+    { name: "About", href: "about.html" },
+    { name: "Products", href: "products.html" },
+    { name: "Contact", href: "contact.html" }
 ];
 
 
@@ -91,24 +91,4 @@ document.addEventListener("DOMContentLoaded", () => {
                 interval: 500,
             });
         });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("about.json")
-    .then((res) => res.json())
-    .then((data) => {
-      const aboutContainer = document.querySelector(".about__container");
-
-      const content = `
-        <div class="about__header">
-          <div>
-            <h2 class="section__header">${data.heading}</h2>
-            <p class="section__description">${data.description}</p>
-          </div>
-        </div>
-      `;
-
-      aboutContainer.innerHTML = content;
-    });
 });

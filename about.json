@@ -1,4 +1,27 @@
 {
   "heading": "About us",
-  "description": "Our passion for exceptional craftsmanship drives us to curate the best pieces of every room in your house."
+  "description": "Our passion for exceptional craftsmanship drives us to curate the best pieces for every room in your house.",
+  "image": "assets/about.png",
+  "cards": [
+    {
+      "number": "1.",
+      "title": "Who we are",
+      "text": "You get a 2-week free trial to kick the Smart tries. We want you to."
+    },
+    {
+      "number": "2.",
+      "title": "What do we do",
+      "text": "We give you a free course that guides you through the process."
+    },
+    {
+      "number": "3.",
+      "title": "How do we help",
+      "text": "Use our multimedia lectures, videos, and coaching sessions."
+    },
+    {
+      "number": "4.",
+      "title": "Create success story",
+      "text": "With access to online learning resources anyone can transform."
+    }
+  ]
 }
