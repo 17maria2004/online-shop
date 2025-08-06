@@ -65,3 +65,24 @@ ScrollReveal().reveal("header__content p", {
     ...ScrollRevealOption,
     delay : 1500,
 });
+
+/*kermel l hot deals ta aamelun dynamically */
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("deals.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const container = document.querySelector(".deals__container");
+    
+      /*looping through each item (deal)*/
+      data.forEach((deal) => {
+        const card = document.createElement("div");
+        card.className = "deals__card";
+        card.innerHTML = `
+          <span><i class="${deal.icon}"></i></span>
+          <h4>${deal.title}</h4>
+          <p>${deal.description}</p>
+        `;
+        container.appendChild(card);
+      });
+    });
+});
