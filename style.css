@@ -186,6 +186,12 @@ nav{
     color: var(--text-light);
 }
 
+@media(min-width : 540px){
+    .deals__container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media(min-width: 768px){
     nav{
         position: static;/* cancels any fixed/absolute positioning */
