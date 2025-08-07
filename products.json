@@ -3,75 +3,93 @@
     "title": "Stackable Chair",
     "price": 87,
     "image": "assets/product-1.png",
-    "category": "chairs"
+    "category": "chairs",
+    "stock": 10,
+    "new": true,
+    "sustainable": true,
+    "discount": "Summer Sale",
+    "discountPercent": 20
   },
   {
     "title": "Vintage Chair",
     "price": 65,
     "image": "assets/product-3.png",
-    "category": "chairs"
+    "category": "chairs",
+    "stock": 5
   },
   {
     "title": "Modern Chair",
     "price": 90,
-    "image": "assets/product-4.png",
-    "category": "chairs"
+    "image": "assets/product-15.png",
+    "category": "chairs",
+    "stock": 0
   },
-
   {
     "title": "Hand Base Lamp",
     "price": 35,
     "image": "assets/product-5.png",
-    "category": "lamps"
+    "category": "lamps",
+    "stock": 8,
+    "sustainable": true
   },
   {
     "title": "Desk Lamp",
     "price": 40,
     "image": "assets/product-7.jpg",
-    "category": "lamps"
+    "category": "lamps",
+    "stock": 4
   },
   {
     "title": "Ceiling Lamp",
     "price": 75,
     "image": "assets/product-8.jpg",
-    "category": "lamps"
+    "category": "lamps",
+    "stock": 2,
+    "discount": "Clearance",
+    "discountPercent": 10
   },
-
   {
     "title": "Leather Sofa",
     "price": 120,
     "image": "assets/product-9.jpg",
-    "category": "sofas"
+    "category": "sofas",
+    "stock": 6,
+    "new": true
   },
   {
     "title": "Modern Sofa",
     "price": 145,
     "image": "assets/product-10.jpg",
-    "category": "sofas"
+    "category": "sofas",
+    "stock": 3
   },
   {
     "title": "Classic Sofa",
     "price": 200,
     "image": "assets/product-11.jpg",
-    "category": "sofas"
+    "category": "sofas",
+    "stock": 1
   },
-
   {
     "title": "Coffee Table",
     "price": 95,
     "image": "assets/product-12.jpg",
-    "category": "tables"
+    "category": "tables",
+    "stock": 5
   },
   {
     "title": "Round Table",
     "price": 110,
     "image": "assets/product-13.jpg",
-    "category": "tables"
+    "category": "tables",
+    "stock": 7,
+    "sustainable": true
   },
   {
     "title": "Side Table",
     "price": 60,
     "image": "assets/product-14.jpg",
-    "category": "tables"
+    "category": "tables",
+    "stock": 0
   }
 ]
