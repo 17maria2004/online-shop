@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Stackable Chair",
+    "price": 87,
+    "image": "assets/product-1.png",
+    "category": "chairs"
+  },
+  {
+    "title": "Vintage Chair",
+    "price": 65,
+    "image": "assets/product-3.png",
+    "category": "chairs"
+  },
+  {
+    "title": "Modern Chair",
+    "price": 90,
+    "image": "assets/product-4.png",
+    "category": "chairs"
+  },
+
+  {
+    "title": "Hand Base Lamp",
+    "price": 35,
+    "image": "assets/product-5.png",
+    "category": "lamps"
+  },
+  {
+    "title": "Desk Lamp",
+    "price": 40,
+    "image": "assets/product-7.jpg",
+    "category": "lamps"
+  },
+  {
+    "title": "Ceiling Lamp",
+    "price": 75,
+    "image": "assets/product-8.jpg",
+    "category": "lamps"
+  },
+
+  {
+    "title": "Leather Sofa",
+    "price": 120,
+    "image": "assets/product-9.jpg",
+    "category": "sofas"
+  },
+  {
+    "title": "Modern Sofa",
+    "price": 145,
+    "image": "assets/product-10.jpg",
+    "category": "sofas"
+  },
+  {
+    "title": "Classic Sofa",
+    "price": 200,
+    "image": "assets/product-11.jpg",
+    "category": "sofas"
+  },
+
+  {
+    "title": "Coffee Table",
+    "price": 95,
+    "image": "assets/product-12.jpg",
+    "category": "tables"
+  },
+  {
+    "title": "Round Table",
+    "price": 110,
+    "image": "assets/product-13.jpg",
+    "category": "tables"
+  },
+  {
+    "title": "Side Table",
+    "price": 60,
+    "image": "assets/product-14.jpg",
+    "category": "tables"
+  }
+]
