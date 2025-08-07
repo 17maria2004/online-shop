@@ -56,12 +56,12 @@ ScrollReveal().reveal(".header__content div", {
     delay: 500,
 });
 
-ScrollReveal().reveal("header__content h1", {
+ScrollReveal().reveal(".header__content h1", {
     ...ScrollRevealOption,
     delay: 1000,
 });
 
-ScrollReveal().reveal("header__content p", {
+ScrollReveal().reveal(".header__content p", {
     ...ScrollRevealOption,
     delay: 1500,
 });

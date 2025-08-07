@@ -1,5 +1,12 @@
 [
   {
+    "title": "Stylish Chair",
+    "price": 65,
+    "image": "assets/product-5.png",
+    "category": "chairs",
+    "stock": 5
+  },
+  {
     "title": "Stackable Chair",
     "price": 87,
     "image": "assets/product-1.png",
@@ -11,13 +18,6 @@
     "discountPercent": 20
   },
   {
-    "title": "Vintage Chair",
-    "price": 65,
-    "image": "assets/product-3.png",
-    "category": "chairs",
-    "stock": 5
-  },
-  {
     "title": "Modern Chair",
     "price": 90,
     "image": "assets/product-15.png",
@@ -27,7 +27,7 @@
   {
     "title": "Hand Base Lamp",
     "price": 35,
-    "image": "assets/product-5.png",
+    "image": "assets/product-4.png",
     "category": "lamps",
     "stock": 8,
     "sustainable": true

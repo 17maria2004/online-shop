@@ -278,6 +278,79 @@ nav {
     transition: 0.3s;
 }
 
+.product__card:hover::before{
+    height: 100%;
+}
+
+.product__card h4{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.product__card p{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.product__card img{
+    max-width: 275px;
+    margin-inline: auto;
+}
+
+.client__content{
+    padding: 4rem 1rem;
+    background-color: var(--extra-light);
+    border-radius: 1rem;
+}
+
+.client__content :is(.section__header, .section__description){
+    max-width: 550px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.client__content .section__header{
+    font-size: 3.25rem;
+}
+
+.swiper{
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.client__card{
+    display: grid;
+    gap: 2rem;
+    max-width: 750px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.client__card img{
+    max-width: 250px;
+    margin-inline: auto;
+}
+
+.client__card p{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.client__card h4{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.client__card h5{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
 
 @media(min-width : 540px) {
     .deals__container {
@@ -285,6 +358,10 @@ nav {
     }
 
     .about__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product__grid{
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -391,6 +468,10 @@ nav {
     .about__grid {
         gap: 4rem 2rem;
     }
+
+    .product__grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media(min-width:1024px) {
@@ -401,4 +482,75 @@ nav {
     .deals__card:nth-child(1) {
         grid-column: unset;
     }
+}
+
+
+
+.badge--new,
+.badge--sustainable {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  margin-top: 0.5rem;
+  margin-right: 0.3rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff6f61;
+}
+
+.badge--new {
+  background-color: #4CAF50; 
+}
+.badge--sustainable {
+  background-color: #8BC34A;
+}
+
+.product__price {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  color: red;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.discount {
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.product__stock.out-of-stock {
+  color: red;
+  font-weight: 600;
+}
+
+.badge--new:hover,
+.badge--sustainable:hover {
+  opacity: 0.9;
+}
+
+button{
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
 }

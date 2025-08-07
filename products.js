@@ -9,14 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!container) return;
 
       const categories = {};
-
-      // ❌ This line filters out products with stock = 0
-      // const inStockProducts = data.filter((p) => p.stock > 0);
-
-      // ✅ Instead: include all products, even out-of-stock
+      
       const inStockProducts = data;
 
-      // Sort based on discount/sustainable
+      //sort by priority
       inStockProducts.sort((a, b) => {
         const score = (p) => {
           if (p.discount) return 3;
@@ -36,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       container.innerHTML = `<h2 class="section__header">Products</h2>`;
 
+      let globalIndex = 0;
+
       for (const category in categories) {
         const section = document.createElement("div");
         section.classList.add("product__section");
@@ -54,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const finalPrice = hasDiscount
                   ? (product.price - discountAmount).toFixed(2)
                   : product.price.toFixed(2);
+
+                const uniqueIndex = globalIndex++;
 
                 return `
                 <div class="product__card">
@@ -80,9 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     product.stock > 0
                       ? `
                   <div class="quantity-controls">
-                    <button class="decrement" data-index="${index}">-</button>
-                    <span class="quantity" id="quantity-${index}">1</span>
-                    <button class="increment" data-index="${index}">+</button>
+                    <button class="decrement" data-index="${uniqueIndex}">-</button>
+                    <span class="quantity" id="quantity-${uniqueIndex}">1</span>
+                    <button class="increment" data-index="${uniqueIndex}" data-stock="${product.stock}">+</button>
                   </div>`
                       : ''
                   }
@@ -96,12 +96,16 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(section);
       }
 
-      // Quantity control buttons
       container.addEventListener("click", (e) => {
         if (e.target.classList.contains("increment")) {
           const index = e.target.dataset.index;
+          const maxStock = parseInt(e.target.dataset.stock);
           const quantityEl = document.getElementById("quantity-" + index);
-          quantityEl.textContent = parseInt(quantityEl.textContent) + 1;
+          const currentQuantity = parseInt(quantityEl.textContent);
+          
+          if (currentQuantity < maxStock) {
+            quantityEl.textContent = currentQuantity + 1;
+          }
         } else if (e.target.classList.contains("decrement")) {
           const index = e.target.dataset.index;
           const quantityEl = document.getElementById("quantity-" + index);

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Design Mastery | furni.shop</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -59,10 +60,29 @@
     <section class="section__container product__container"></section>
 
 
+    <section class="section__container client__container">
+        <div class="client__content">
+            <h2 class="section__header">What our happy client say</h2>
+            <p class="section__description">
+                Testimonials Highlighting Our Commitment to Quality, Exceptional Service, and Customer Satisfaction
+            </p>
+
+            <div class="swiper">
+                <div class="swiper-wrapper" id="client-swiper-wrapper"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="index.js" charset="UTF-8" defer></script>
     <script src="about.js" charset="UTF-8" defer></script>
     <script src="products.js" charset="UTF-8" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="clients.js" charset="UTF-8" defer></script>
+
 </body>
 
 </html>
