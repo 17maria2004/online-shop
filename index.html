@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
@@ -28,6 +29,13 @@
         <div class="nav__search" id="nav-search">
             <input type="text" placeholder="Search">
             <span><i class="ri-search-2-line"></i></span>
+        </div>
+
+        <div class="nav__login">
+            <button class="login-btn" id="loginButton">
+                <i class="ri-user-line"></i>
+                Login
+            </button>
         </div>
 
     </nav>
@@ -76,12 +84,107 @@
         </div>
     </section>
 
+
+    <footer class="footer" id="contact">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#" class="logo">furni.shop</a>
+                </div>
+                <p>
+                    Join us in transforming your living spaces with furniture
+                    that blends elegance and practicality seamlessly.
+                </p>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="ri-pinterest-fill"></i></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Services</h4>
+                <ul class="footer__links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Payrol</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Support</h4>
+                <ul class="footer__links">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Cancelation Policy</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Navigation</h4>
+                <ul class="footer__links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bar">
+            Copyright &copy 2024 Web Design Mastery. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Login/Signup Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <button class="close-btn" id="closeBtn">
+                <i class="ri-close-line"></i>
+            </button>
+            
+            <div class="form-container" id="login-container">
+                <h2>Welcome Back</h2>
+                <input type="text" placeholder="Username" id="loginUsername">
+                <input type="password" placeholder="Password" id="loginPassword">
+                <button id="loginSubmit">Login</button>
+                <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+            </div>
+
+            <div class="form-container hidden" id="signup-container">
+                <h2>Create Account</h2>
+                <input type="text" placeholder="Username" id="signupUsername">
+                <input type="email" placeholder="Email" id="signupEmail">
+                <input type="password" placeholder="Password" id="signupPassword">
+                <button id="signupSubmit">Sign Up</button>
+                <p>Already have an account? <a href="#" id="show-login">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="index.js" charset="UTF-8" defer></script>
     <script src="about.js" charset="UTF-8" defer></script>
     <script src="products.js" charset="UTF-8" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="clients.js" charset="UTF-8" defer></script>
+    <script src="login.js" defer></script>
 
 </body>
 
