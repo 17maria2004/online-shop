@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("clients.json")
+  fetch("clients.json") //aam bebeat request to loads clients.json
     .then((res) => res.json())
     .then((data) => {
       const wrapper = document.getElementById("client-swiper-wrapper");
