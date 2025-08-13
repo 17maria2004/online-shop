@@ -21,7 +21,6 @@
             <div class="nav__menu__btn" id="menu-btn">
                 <i class="ri-menu-line"></i>
             </div>
-
         </div>
 
         <ul class="nav__links" id="nav-links"></ul>
@@ -31,13 +30,17 @@
             <span><i class="ri-search-2-line"></i></span>
         </div>
 
+        <a href="cart.html" class="cart-icon"
+            style="font-size: 1.3rem; display: flex; color: var(--primary-color); align-items: center;">
+            <i class="ri-shopping-cart-line"></i>
+            <span id="cart-count" style="margin-left: 0.3rem;">0</span>
+        </a>
         <div class="nav__login">
             <button class="login-btn" id="loginButton">
                 <i class="ri-user-line"></i>
                 Login
             </button>
         </div>
-
     </nav>
 
     <header class="section__container header__container" id="home">
@@ -62,11 +65,9 @@
         </div>
     </section>
 
-
     <section class="section__container about__container"></section>
 
     <section class="section__container product__container"></section>
-
 
     <section class="section__container client__container">
         <div class="client__content">
@@ -84,7 +85,6 @@
         </div>
     </section>
 
-
     <footer class="footer" id="contact">
         <div class="section__container footer__container">
             <div class="footer__col">
@@ -99,15 +99,12 @@
                     <li>
                         <a href="#"><i class="ri-facebook-fill"></i></a>
                     </li>
-
                     <li>
                         <a href="#"><i class="ri-twitter-fill"></i></a>
                     </li>
-
                     <li>
                         <a href="#"><i class="ri-linkedin-fill"></i></a>
                     </li>
-
                     <li>
                         <a href="#"><i class="ri-pinterest-fill"></i></i></a>
                     </li>
@@ -124,18 +121,16 @@
                     <li><a href="#">Help Center</a></li>
                 </ul>
             </div>
-
             <div class="footer__col">
                 <h4>Support</h4>
                 <ul class="footer__links">
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Affiliates</a></li>
-                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">WSitemap</a></li>
                     <li><a href="#">Cancelation Policy</a></li>
                     <li><a href="#">Security</a></li>
                 </ul>
             </div>
-
             <div class="footer__col">
                 <h4>Navigation</h4>
                 <ul class="footer__links">
@@ -158,7 +153,7 @@
             <button class="close-btn" id="closeBtn">
                 <i class="ri-close-line"></i>
             </button>
-            
+
             <div class="form-container" id="login-container">
                 <h2>Welcome Back</h2>
                 <input type="text" placeholder="Username" id="loginUsername">
@@ -185,6 +180,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="clients.js" charset="UTF-8" defer></script>
     <script src="login.js" defer></script>
+    <script src="navbar.js" defer></script>
 
 </body>
 

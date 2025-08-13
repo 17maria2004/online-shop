@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products - furni.shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="login.css" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
+  <nav>
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="#" class="logo">furni.shop</a>
+      </div>
+
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links"></ul>
+
+    <div class="nav__search" id="nav-search">
+      <input type="text" placeholder="Search">
+      <span><i class="ri-search-2-line"></i></span>
+    </div>
+
+    <a href="cart.html" class="cart-icon"
+      style="font-size: 1.3rem; display: flex; color: var(--primary-color); align-items: center;">
+      <i class="ri-shopping-cart-line"></i>
+      <span id="cart-count" style="margin-left: 0.3rem;">0</span>
+    </a>
+    <div class="nav__login">
+      <button class="login-btn" id="loginButton">
+        <i class="ri-user-line"></i>
+        Login
+      </button>
+    </div>
+  </nav>
   <section class="section__container product__container"></section>
 
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-container">
+      <button class="close-btn" id="closeBtn">
+        <i class="ri-close-line"></i>
+      </button>
+
+      <div class="form-container" id="login-container">
+        <h2>Welcome Back</h2>
+        <input type="text" placeholder="Username" id="loginUsername">
+        <input type="password" placeholder="Password" id="loginPassword">
+        <button id="loginSubmit">Login</button>
+        <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+      </div>
+
+      <div class="form-container hidden" id="signup-container">
+        <h2>Create Account</h2>
+        <input type="text" placeholder="Username" id="signupUsername">
+        <input type="email" placeholder="Email" id="signupEmail">
+        <input type="password" placeholder="Password" id="signupPassword">
+        <button id="signupSubmit">Sign Up</button>
+        <p>Already have an account? <a href="#" id="show-login">Log in</a></p>
+      </div>
+    </div>
+  </div>
   <script src="products.js" defer></script>
+  <script src="cart.js" defer></script>
+  <script src="login.js" defer></script>
+
+
 </body>
+
 </html>

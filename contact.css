@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -53,31 +53,33 @@ body {
   margin: 20px 0;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-  border: 1px solid #dbdbdb;
-  border-radius: 2px;
-  color: #333;
-  height: 42px;
-  padding-left: 20px;
-  width: 100%;
-  outline: none;
-}
-
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
 textarea {
   border: 1px solid #dbdbdb;
   border-radius: 2px;
   color: #333;
-  padding: 12px 20px;
+  padding-left: 20px;
   width: 100%;
   outline: none;
+  font-size: 15px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"] {
+  height: 42px;
+}
+
+textarea {
+  padding: 12px 20px;
   margin-bottom: 20px;
   resize: vertical;
   min-height: 100px;
 }
 
-input[type="submit"] {
+#contact-form input[type="submit"] {
   font-size: 16px;
   text-transform: uppercase;
   background: transparent;
@@ -89,7 +91,7 @@ input[type="submit"] {
   transition: all 0.3s ease;
 }
 
-input[type="submit"]:hover {
+#contact-form input[type="submit"]:hover {
   background-color: #f85508;
   border-color: #f85508;
   color: #fff;
@@ -109,8 +111,6 @@ input[type="submit"]:hover {
 
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .get_say_info_sec > li {
@@ -127,7 +127,6 @@ ul {
 
 .get_say_info_sec > li a {
   display: block;
-  width: 100%;
   padding: 15px 25px;
   background: #162b65;
   color: #fff;
@@ -172,5 +171,80 @@ ul {
 
   .get_say_form {
     padding-bottom: 30px;
+  }
+}
+
+#error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+#success-msg {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+/* Extra responsive adjustments */
+@media (max-width: 992px) {
+  .get_form_inner {
+    padding: 30px 20px; /* Reduced padding for tablets */
+  }
+
+  .get_form_inner_text h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .grid-50-50 {
+    grid-template-columns: 1fr; /* Stack inputs on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-70-30 {
+    grid-template-columns: 1fr;
+  }
+
+  .get_say_social-icn {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .get_say_form {
+    padding-bottom: 30px;
+  }
+
+  /* Make inputs & buttons bigger for touch devices */
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 16px;
+  }
+
+  #contact-form input[type="submit"] {
+    width: 100%; /* Full width submit button */
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For very small screens */
+  .get_form_inner {
+    padding: 20px 15px;
+  }
+
+  .get_say_form {
+    padding: 30px 15px;
+  }
+
+  .get_say_info_sec > li a {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .get_say_form h5 {
+    font-size: 20px;
   }
 }
