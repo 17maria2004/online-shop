@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slide.innerHTML = `
           <div class="client__card">
             <img src="${client.image}" alt="user" />
-            <div>
+            <div class="card-content">
               <p>${client.text}</p>
               <h4>${client.name}</h4>
               <h5>${client.title}</h5>
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.appendChild(slide);
       });
 
+      //creates a new swiper instance for the element with class .swiper
       new Swiper(".swiper", {
         loop: true,
         slidesPerView: 1,

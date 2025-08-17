@@ -1,3 +1,12 @@
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const ids = ["cart-count", "cart-count-main"];
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = count;
+  });
+}
 const AboutScrollRevealOption = {
   distance: "50px",
   origin: "bottom",
@@ -5,6 +14,7 @@ const AboutScrollRevealOption = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
   const aboutContainer = document.querySelector(".about__container");
   if (!aboutContainer) return;
 
@@ -55,45 +65,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch((error) => console.error("Error loading About section:", error));
-});
-
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
-const menuBtnIcon =
-  menuBtn.querySelector(
-    "i"
-  ); /*From inside the menuBtn element, find the first <i> tag*/
-
-const navData = [
-  { name: "Home", href: "index.html" },
-  { name: "About", href: "about.html" },
-  { name: "Products", href: "products.html" },
-  { name: "Contact", href: "contact.html" },
-];
-
-// Dynamically create nav links from JSON
-navData.forEach((item) => {
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.href = item.href;
-  a.textContent = item.name;
-  li.appendChild(a);
-  navLinks.appendChild(li);
-});
-
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
-
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
-});
-
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
-});
-
-const navSearch = document.getElementById("nav-search");
-navSearch.addEventListener("click", (e) => {
-  navSearch.classList.toggle("open");
 });

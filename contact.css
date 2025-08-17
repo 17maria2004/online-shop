@@ -16,15 +16,18 @@ body {
 }
 
 .footer_get_touch_outer {
-  margin-top: 80px;
+  margin-top: 10px;
+  margin-bottom: 35px;
 }
 
 .grid-70-30 {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 65% 30%;
   gap: 30px;
 }
 
+
+/* hole bel say hi ta hottun taht baadun  */
 .column-70,
 .column-30 {
   display: block;
@@ -43,6 +46,8 @@ body {
   margin-bottom: 40px;
 }
 
+
+/* kermel l inputs tabaa l form */
 .grid-50-50 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -60,6 +65,7 @@ textarea {
   border: 1px solid #dbdbdb;
   border-radius: 2px;
   color: #333;
+  /*bs ta eje ekbus biealb l input*/
   padding-left: 20px;
   width: 100%;
   outline: none;
@@ -70,6 +76,7 @@ textarea {
 #contact-form input[type="email"],
 #contact-form input[type="tel"] {
   height: 42px;
+  /*bel toul kel input*/
 }
 
 textarea {
@@ -85,7 +92,7 @@ textarea {
   background: transparent;
   border: 2px solid #103e65;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   color: #103e65;
   transition: all 0.3s ease;
@@ -98,8 +105,8 @@ textarea {
 }
 
 .get_say_form {
-  background: #103e65;
-  padding: 45px 30px 80px;
+  background: var(--primary-color);
+  padding: 55px 30px 40px;
   position: relative;
 }
 
@@ -113,7 +120,7 @@ ul {
   list-style: none;
 }
 
-.get_say_info_sec > li {
+.get_say_info_sec>li {
   display: grid;
   grid-template-columns: 40px auto;
   align-items: center;
@@ -122,22 +129,23 @@ ul {
 
 .get_say_info_sec i {
   color: #fff;
-  font-size: 24px;
+  font-size: 25px;
 }
 
-.get_say_info_sec > li a {
+.get_say_info_sec>li a {
   display: block;
   padding: 15px 25px;
-  background: #162b65;
+  background: #94979f;
   color: #fff;
   font-size: 16px;
   font-weight: 500;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px 5px 0 5px;
+  /*top-left, top-right, bottom-right, bottom-left*/
   text-decoration: none;
   transition: background 0.3s ease;
 }
 
-.get_say_info_sec > li a:hover {
+.get_say_info_sec>li a:hover {
   background-color: #f85508;
 }
 
@@ -145,33 +153,18 @@ ul {
   display: flex;
   position: absolute;
   bottom: 30px;
-  left: 30px;
+  /* left: 30px; */
 }
 
 .get_say_social-icn a {
   font-size: 22px;
   color: #fff;
-  margin-right: 20px;
+  margin-left: 20px;
   transition: color 0.3s ease;
 }
 
 .get_say_social-icn a:hover {
   color: #f85508;
-}
-
-@media (max-width: 768px) {
-  .grid-70-30 {
-    grid-template-columns: 1fr;
-  }
-
-  .get_say_social-icn {
-    position: static;
-    margin-top: 20px;
-  }
-
-  .get_say_form {
-    padding-bottom: 30px;
-  }
 }
 
 #error {
@@ -186,65 +179,191 @@ ul {
   margin-top: 10px;
 }
 
+@media(max-width:1024px) {
 
-/* Extra responsive adjustments */
-@media (max-width: 992px) {
-  .get_form_inner {
-    padding: 30px 20px; /* Reduced padding for tablets */
-  }
-
-  .get_form_inner_text h3 {
-    font-size: 22px;
-    margin-bottom: 25px;
-  }
-
-  .grid-50-50 {
-    grid-template-columns: 1fr; /* Stack inputs on tablets */
-  }
-}
-
-@media (max-width: 768px) {
   .grid-70-30 {
-    grid-template-columns: 1fr;
-  }
-
-  .get_say_social-icn {
-    position: static;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 55% 43%;
+    gap: 30px;
   }
 
   .get_say_form {
-    padding-bottom: 30px;
-  }
-
-  /* Make inputs & buttons bigger for touch devices */
-  #contact-form input,
-  #contact-form textarea {
-    font-size: 16px;
-  }
-
-  #contact-form input[type="submit"] {
-    width: 100%; /* Full width submit button */
-    padding: 12px;
+    min-width: 400px;
   }
 }
 
-@media (max-width: 480px) {
-  /* For very small screens */
-  .get_form_inner {
-    padding: 20px 15px;
-  }
+@media (max-width:767px) {
 
+  nav .cart-icon-main,
+  nav .nav__login-main {
+    display: none !important;
+  }
+}
+
+@media(max-width:768px) {
   .get_say_form {
-    padding: 30px 15px;
+    max-width: 300px;
+    min-width: 0;
   }
 
-  .get_say_info_sec > li a {
-    padding: 10px 15px;
+  .get_say_info_sec>li a {
     font-size: 14px;
   }
 
+  .get_form_inner {
+    padding: 20px 30px;
+  }
+
+  .get_say_form {
+    padding: 20px 30px;
+
+  }
+
+  .grid-70-30 {
+    padding-top: 75px;
+  }
+
+  .nav__links li {
+    font-size: 13px;
+  }
+
+  .nav__menu__btn .cart-icon,
+  .nav__menu__btn .nav__login,
+  .nav__menu__btn #menu-btn {
+    margin: 0 4px;
+  }
+
+  .nav__menu__btn .nav__login .login-btn {
+    font-size: 14px;
+  }
+
+  .nav__menu__btn .cart-icon i,
+  .nav__menu__btn .cart-icon span {
+    font-size: 15px;
+  }
+
+  .ri-menu-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 426px) {
+
+  .get_form_inner,
+  .get_say_form {
+    padding: 14px 14px;
+  }
+
+  #contact-form input[type="text"],
+  #contact-form input[type="email"],
+  #contact-form input[type="tel"],
+  textarea {
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    color: #333;
+    /*bs ta eje ekbus biealb l input*/
+    padding-left: 5px;
+    width: 100%;
+    outline: none;
+    font-size: 7px;
+  }
+
+  #contact-form input[type="submit"] {
+    font-size: 12px;
+    padding: 4px 9px;
+  }
+
+  .get_say_info_sec i {
+    font-size: 15px;
+    max-width: 25px;
+  }
+
+  #contact-form input[type="text"],
+  #contact-form input[type="email"],
+  #contact-form input[type="tel"] {
+    height: 25px;
+    /*bel toul kel input*/
+  }
+
+  textarea {
+    min-height: 50px;
+    max-height: 50px;
+    margin-bottom: 10px;
+
+  }
+
+  .get_say_social-icn a {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  .get_say_info_sec>li {
+    margin-bottom: 20px;
+    grid-template-columns: 30px auto;
+  }
+
+  .grid-70-30 {
+    gap: 15px;
+  }
+
+  .get_form_inner_text h3,
   .get_say_form h5 {
+    margin-bottom: 20px;
     font-size: 20px;
+  }
+
+  .get_say_info_sec>li a {
+    padding: 5px 10px;
+    font-size: 8px;
+    max-width: 110px;
+  }
+}
+
+@media(max-width:376px){
+  .get_say_info_sec>li a{
+    font-size: 7px;
+  }
+}
+
+@media(max-width:320px) {
+  .get_form {
+    max-width: 160px;
+  }
+
+  .grid-70-30 {
+    grid-template-columns: 50% 45%;
+  }
+
+  .grid-50-50 {
+    grid-gap: 10px;
+  }
+
+  .grid-full {
+    margin: 10px 0;
+  }
+
+  textarea {
+    padding: 9px 5px;
+  }
+
+  .get_say_info_sec>li a {
+    font-size: 6px;
+  }
+
+  .get_say_info_sec i {
+    font-size: 13px;
+  }
+
+  .get_say_info_sec>li {
+    grid-template-columns: 22px auto;
+    margin-bottom: 25px;
+  }
+
+  .get_say_social-icn a{
+    margin-left: 11px;
+    font-size: 15px;
   }
 }

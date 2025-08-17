@@ -9,13 +9,12 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="login.css" />
-
-  <link rel="stylesheet" href="contact.css" />
   <link rel="stylesheet" href="style.css" />
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="contact.css" />
+
 </head>
 
 <body>
@@ -26,6 +25,17 @@
       </div>
 
       <div class="nav__menu__btn" id="menu-btn">
+        <a href="cart.html" class="cart-icon"
+          style="text-decoration: none;color: white; font-size: 1.3rem; display: flex; align-items: center;">
+          <i class="ri-shopping-cart-line"></i>
+          <span id="cart-count-main" style="margin-left: 0.3rem;">0</span>
+        </a>
+        <div class="nav__login">
+          <button class="login-btn" id="loginButton">
+            <i class="ri-user-line"></i>
+            Login
+          </button>
+        </div>
         <i class="ri-menu-line"></i>
       </div>
     </div>
@@ -38,13 +48,13 @@
     </div>
 
 
-    <a href="cart.html" class="cart-icon"
+    <a href="cart.html" class="cart-icon-main"
       style="text-decoration: none;color: var(--primary-color); font-size: 1.3rem; display: flex; align-items: center;">
       <i class="ri-shopping-cart-line"></i>
       <span id="cart-count" style="margin-left: 0.3rem;">0</span>
     </a>
-    <div class="nav__login">
-      <button class="login-btn" id="loginButton">
+    <div class="nav__login-main">
+      <button class="login-btn" id="loginButtonMain">
         <i class="ri-user-line"></i>
         Login
       </button>
@@ -69,7 +79,7 @@
                 <input type="tel" placeholder="Phone/Skype">
               </div>
               <div class="grid-full">
-                <textarea id="message" placeholder="Write a message" cols="30" rows="10"></textarea>
+                <textarea id="message" placeholder="Write a message" cols="30" rows="5"></textarea>
                 <input type="submit" id="submit" value="Submit">
               </div>
               <p id="error" style="color:red;"></p>
@@ -129,6 +139,8 @@
       </div>
     </div>
   </div>
+  <script src="product.js"></script>
+
   <script src="contact.js"></script>
   <script src="login.js"></script>
 

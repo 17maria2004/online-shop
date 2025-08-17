@@ -9,8 +9,9 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="cart.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cart.css">
+
 
 </head>
 
@@ -22,7 +23,18 @@
       </div>
 
       <div class="nav__menu__btn" id="menu-btn">
-        <i class="ri-menu-line"></i>
+        <a href="cart.html" class="cart-icon"
+          style="font-size: 1.3rem; display: flex; color: white; align-items: center;">
+          <i class="ri-shopping-cart-line"></i>
+          <span id="cart-count" style="margin-left: 0.3rem;">0</span>
+        </a>
+        <div class="nav__login">
+          <button class="login-btn" id="loginButton">
+            <i class="ri-user-line"></i>
+            Login
+          </button>
+        </div>
+        <i class="ri-menu-line d-flex align-items-center"></i>
       </div>
     </div>
 
@@ -33,13 +45,13 @@
       <span><i class="ri-search-2-line"></i></span>
     </div>
 
-    <a href="cart.html" class="cart-icon"
+    <a href="cart.html" class="cart-icon-main"
       style="font-size: 1.3rem; display: flex; color: var(--primary-color); align-items: center;">
       <i class="ri-shopping-cart-line"></i>
-      <span id="cart-count" style="margin-left: 0.3rem;">0</span>
+      <span id="cart-count-main" style="margin-left: 0.3rem;">0</span>
     </a>
-    <div class="nav__login">
-      <button class="login-btn" id="loginButton">
+    <div class="nav__login-main">
+      <button class="login-btn" id="loginButtonMain">
         <i class="ri-user-line"></i>
         Login
       </button>
@@ -48,11 +60,11 @@
 
 
   <section class="page-wrap">
-    <div class="container">
+    <div class="container cart-container">
       <header class="bg-white shadow-sm py-3 mb-4">
         <div class="container d-flex justify-content-between align-items-center">
           <h1 class="h3 mb-0">Your Shopping Cart</h1>
-          <a href="products.html" class="btn btn-outline-secondary btn-sm">
+          <a href="products.html" class="btn btn-outline-secondary btn-sm continue-btn">
             ← Continue Shopping
           </a>
         </div>
@@ -75,7 +87,6 @@
         </table>
       </div>
 
-      <!-- Cart Total -->
       <div class="card p-3 mt-4">
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="h5 mb-0">Total: $<span id="total-price">0.00</span></h2>

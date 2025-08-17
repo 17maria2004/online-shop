@@ -1,7 +1,6 @@
-// login.js - FIXED VERSION
 document.addEventListener("DOMContentLoaded", () => {
-  // Get all the elements
   const loginButton = document.getElementById("loginButton");
+  const loginButton2 = document.getElementById("loginButtonMain");
   const popupOverlay = document.getElementById("popupOverlay");
   const closeBtn = document.getElementById("closeBtn");
   const loginContainer = document.getElementById("login-container");
@@ -9,17 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const showSignup = document.getElementById("show-signup");
   const showLogin = document.getElementById("show-login");
 
-  // Function to show the popup
   function showPopup() {
     if (popupOverlay) {
       popupOverlay.classList.add("active");
-      // Reset to login form when opening
       signupContainer.classList.add("hidden");
       loginContainer.classList.remove("hidden");
     }
   }
 
-  // Function to hide the popup
   function hidePopup() {
     if (popupOverlay) {
       popupOverlay.classList.remove("active");
@@ -27,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Show popup when login button is clicked
+  if (loginButton2) {
+    loginButton2.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPopup();
+    });
+  }
   if (loginButton) {
     loginButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -34,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Hide popup when close button is clicked
   if (closeBtn) {
     closeBtn.addEventListener("click", hidePopup);
   }
@@ -48,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Switch to signup form
   if (showSignup) {
     showSignup.addEventListener("click", (e) => {
       e.preventDefault();
@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Switch to login form
   if (showLogin) {
     showLogin.addEventListener("click", (e) => {
       e.preventDefault();
@@ -66,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Handle login form submission
   const loginSubmit = document.getElementById("loginSubmit");
   if (loginSubmit) {
     loginSubmit.addEventListener("click", (e) => {
@@ -75,10 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("loginPassword").value;
 
       if (username && password) {
-        // Here you would typically send data to server
         alert(`Login attempt for: ${username}`);
         hidePopup();
-        // Clear form
         document.getElementById("loginUsername").value = "";
         document.getElementById("loginPassword").value = "";
       } else {
@@ -87,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Handle signup form submission
   const signupSubmit = document.getElementById("signupSubmit");
   if (signupSubmit) {
     signupSubmit.addEventListener("click", (e) => {
@@ -97,10 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("signupPassword").value;
 
       if (username && email && password) {
-        // Here you would typically send data to server
         alert(`Signup attempt for: ${username} (${email})`);
         hidePopup();
-        // Clear form
         document.getElementById("signupUsername").value = "";
         document.getElementById("signupEmail").value = "";
         document.getElementById("signupPassword").value = "";

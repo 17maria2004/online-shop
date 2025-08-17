@@ -27,7 +27,7 @@
 
 .popup-container {
   background: white;
-  padding: 2rem;
+  padding: 4rem;
   border-radius: 15px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   width: 90%;
@@ -169,7 +169,7 @@ body.login-page {
   align-items: center;
 }
 
-.container {
+.popup-container {
   background: white;
   padding: 2rem;
   border-radius: 10px;

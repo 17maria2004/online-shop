@@ -3,8 +3,11 @@ let productsData = [];
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const countEl = document.getElementById("cart-count");
-  if (countEl) countEl.textContent = count;
+  const ids = ["cart-count", "cart-count-main"];
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = count;
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -51,60 +54,74 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3 class="product__category">${categoryName}</h3>
           <div class="product__grid">
             ${categories[category]
-            .map((product) => {
-              const hasDiscount = product.discount && product.discountPercent;
-              const discountAmount = hasDiscount
-                ? (product.price * (product.discountPercent / 100)).toFixed(2)
-                : 0;
-              const finalPrice = hasDiscount
-                ? (product.price - discountAmount).toFixed(2)
-                : product.price.toFixed(2);
+              .map((product) => {
+                const hasDiscount = product.discount && product.discountPercent;
+                const discountAmount = hasDiscount
+                  ? (product.price * (product.discountPercent / 100)).toFixed(2)
+                  : 0;
+                const finalPrice = hasDiscount
+                  ? (product.price - discountAmount).toFixed(2)
+                  : product.price.toFixed(2);
 
-              const uniqueIndex = globalIndex++;
+                const uniqueIndex = globalIndex++;
 
-              return `
+                return `
                 <div class="product__card">
+                  <div class="product-header">
                   <img src="${product.image}" alt="${product.title}" />
+                                    </div>
+                  <div class="product-body">
                   <h4>${product.title}</h4>
+
                   <div class="badge-container">
-                    ${product.new
-                  ? '<span class="badge badge--new">New</span>'
-                  : ""
-                }
-                    ${product.sustainable
-                  ? '<span class="badge badge--sustainable">🌿 Sustainable</span>'
-                  : ""
-                }
+                    ${
+                      product.new
+                        ? '<span class="badge badge--new">New</span>'
+                        : ""
+                    }
+                    ${
+                      product.sustainable
+                        ? '<span class="badge badge--sustainable">🌿 Sustainable</span>'
+                        : ""
+                    }
                   </div>
 
+
                   <p class="product__price">
-                    ${hasDiscount
-                  ? `
+                    ${
+                      hasDiscount
+                        ? `
                         <span class="old-price">$${product.price.toFixed(
-                    2
-                  )}</span>
+                          2
+                        )}</span>
                         <span class="new-price">$${finalPrice}</span>
-                        <span class="discount">-${product.discountPercent
-                  }%</span>
+                        <span class="discount">-${
+                          product.discountPercent
+                        }%</span>
                         <span class="discount-name">${product.discount}</span>
                       `
-                  : `$${product.price.toFixed(2)}`
-                }
+                        : `$${product.price.toFixed(2)}`
+                    }
                   </p>
-                  <p class="product__stock ${product.stock === 0 ? "out-of-stock" : ""
-                }">
-                    ${product.stock > 0
-                  ? `In Stock : <span id="stock-${uniqueIndex}">${product.stock}</span>`
-                  : "Out of Stock"
-                }
+                  <p class="product__stock ${
+                    product.stock === 0 ? "out-of-stock" : ""
+                  }">
+                    ${
+                      product.stock > 0
+                        ? `In Stock : <span id="stock-${uniqueIndex}">${product.stock}</span>`
+                        : "Out of Stock"
+                    }
                   </p>
                   <div class="cart-controls">
                     <div class="quantity-controls">
-                      <button class="decrement" data-index="${uniqueIndex}" ${product.stock === 0 ? "disabled" : ""
+                      <button class="decrement" data-index="${uniqueIndex}" ${
+                  product.stock === 0 ? "disabled" : ""
                 }>-</button>
-                      <span class="quantity" id="quantity-${uniqueIndex}">${product.stock > 0 ? "1" : "0"
+                      <span class="quantity" id="quantity-${uniqueIndex}">${
+                  product.stock > 0 ? "1" : "0"
                 }</span>
-                      <button class="increment" data-index="${uniqueIndex}" data-stock="${product.stock
+                      <button class="increment" data-index="${uniqueIndex}" data-stock="${
+                  product.stock
                 }" ${product.stock === 0 ? "disabled" : ""}>+</button>
                     </div>
                     <button class="add-to-cart" 
@@ -119,10 +136,11 @@ document.addEventListener("DOMContentLoaded", () => {
                       Add To Cart
                     </button>
                   </div>
+                  </div>
                 </div>
               `;
-            })
-            .join("")}
+              })
+              .join("")}
           </div>
         `;
 
@@ -185,8 +203,10 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
               stockEl.textContent = "0";
               target.disabled = true;
-              const decrementBtn = target.parentElement.querySelector(".decrement");
-              const incrementBtn = target.parentElement.querySelector(".increment");
+              const decrementBtn =
+                target.parentElement.querySelector(".decrement");
+              const incrementBtn =
+                target.parentElement.querySelector(".increment");
               if (decrementBtn) decrementBtn.disabled = true;
               if (incrementBtn) incrementBtn.disabled = true;
             }

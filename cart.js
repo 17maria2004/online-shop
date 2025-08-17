@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const tbody = document.querySelector("#cart-table tbody");
   const totalPriceEl = document.getElementById("total-price");
@@ -58,19 +59,21 @@ document.addEventListener("DOMContentLoaded", () => {
         cart[idx].quantity = newQty;
         localStorage.setItem("cart", JSON.stringify(cart));
         //aam nsayyiv l updates li saro back to the localstorage
-        renderCart();
+        renderCart(); //baayyit lal fctn to matches the latest changes
       }
     }
+    updateCartCount();
   });
 
   // Remove item from cart
   tbody.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-btn")) {
-      const idx = parseInt(e.target.dataset.index);//bshuf l index tabaoo
-      cart.splice(idx, 1);//splice yaane removes 1 item
+      const idx = parseInt(e.target.dataset.index); //bshuf l index tabaoo
+      cart.splice(idx, 1); //splice yaane removes 1 item
       localStorage.setItem("cart", JSON.stringify(cart));
       renderCart();
     }
+    updateCartCount();
   });
 
   renderCart();
@@ -91,13 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Re-render the cart table (will show empty message)
     renderCart();
 
+    updateCartCount();
+
     alert("Thank you for your purchase! Your cart is now empty.");
   });
 });
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
- /*From inside the menuBtn element, find the first <i> tag*/
+const menuBtnIcon = menuBtn.querySelector(".ri-menu-item");
 
 const navData = [
   { name: "Home", href: "index.html" },
@@ -121,6 +125,7 @@ menuBtn.addEventListener("click", (e) => {
 
   const isOpen = navLinks.classList.contains("open");
   menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+  //bdde set icon class to "ri-close-line" aw "ri-menu-line" aala hasab eza open aw lae
 });
 
 navLinks.addEventListener("click", (e) => {
@@ -132,3 +137,12 @@ const navSearch = document.getElementById("nav-search");
 navSearch.addEventListener("click", (e) => {
   navSearch.classList.toggle("open");
 });
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const ids = ["cart-count", "cart-count-main"];
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = count;
+  });
+}

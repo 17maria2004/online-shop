@@ -1,4 +1,16 @@
 // Get form elements
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const ids = ["cart-count", "cart-count-main"];
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = count;
+  });
+}
+
+updateCartCount();
+
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
@@ -13,10 +25,7 @@ const emailIsValid = (email) => {
 
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
-const menuBtnIcon =
-  menuBtn.querySelector(
-    "i"
-  ); /*From inside the menuBtn element, find the first <i> tag*/
+const menuBtnIcon = menuBtn.querySelector(".ri-menu-item");
 
 const navData = [
   { name: "Home", href: "index.html" },
@@ -79,6 +88,8 @@ const validate = (e) => {
   errorElement.innerHTML = "";
   successMsg.innerHTML =
     "Thank you! I will get back to you as soon as possible.";
+  //Clears any previous error message.
+  // Displays a success message to the user.
 
   // Clear success message & reset form after 6 seconds
   setTimeout(() => {
@@ -86,7 +97,8 @@ const validate = (e) => {
     contactForm.reset();
   }, 6000);
 
-  return true;
+  return true; //validation succeeded
 };
 
 submitBtn.addEventListener("click", validate);
+// When the submit button is clicked, it runs validate().

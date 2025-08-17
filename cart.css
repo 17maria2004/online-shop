@@ -1,9 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -14,8 +8,8 @@ header {
   margin-top: 20px;
 }
 
-.page-wrap .container {
-  max-width: 75%; /* 3/4 of screen */
+.page-wrap .cart-container {
+  max-width: 75%;
 }
 
 table {
@@ -23,7 +17,8 @@ table {
   border-collapse: collapse;
 }
 
-table th, table td {
+table th,
+table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
@@ -50,12 +45,14 @@ table th, table td {
    Responsive Adjustments
 -------------------- */
 @media (max-width: 768px) {
-  .page-wrap .container {
+  .page-wrap .cart-container {
     max-width: 100%;
-    padding: 0 10px;
+    margin-top: 0;
+    padding-top: 85px;
   }
 
-  table th, table td {
+  table th,
+  table td {
     padding: 8px;
     font-size: 0.9rem;
   }
@@ -72,11 +69,17 @@ table th, table td {
     margin-bottom: 5px;
   }
 }
+@media (max-width: 767px) {
+  nav .cart-icon-main,
+  nav .nav__login-main {
+    display: none !important;
+  }
+}
 
 @media (max-width: 576px) {
   #cart-table img {
-    width: 50px;
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
   }
 
   #checkout-btn {
@@ -88,5 +91,74 @@ table th, table td {
 
   #total-price {
     font-size: 1rem;
+  }
+  .h5,
+  #total-price {
+    font-size: 0.65rem;
+  }
+}
+@media (max-width: 425px) {
+  table th,
+  table td {
+    padding: 8px;
+    font-size: 0.6rem;
+  }
+  .form-control {
+    line-height: 0.75rem;
+    font-size: 0.7rem;
+  }
+  .remove-btn {
+    font-size: 0.5rem;
+  }
+  #cart-table img {
+    width: auto !important;
+    height: 40px !important;
+  }
+  .h3 {
+    font-size: 1rem;
+  }
+  .continue-btn {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 375px) {
+  table th,
+  table td {
+    padding: 4px !important;
+    font-size: 0.4rem;
+  }
+  .form-control {
+    max-width: 50px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  #checkout-btn {
+    width: 70%;
+    margin: 0;
+  }
+  .h3 {
+    font-size: 0.8rem;
+  }
+  .continue-btn {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .form-control {
+    font-size: 0.5rem;
+    max-width: 45px;
+    padding: 2px 6px;
+  }
+  #cart-table img {
+    width: auto !important;
+    height: 30px !important;
+  }
+  table th,
+  table td {
+    padding: 2px;
+    font-size: 0.4rem;
   }
 }
