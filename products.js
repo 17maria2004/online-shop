@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const uniqueIndex = globalIndex++;
 
                 return `
-                <div class="product__card">
+                <div class="product__card" data-product-id="${encodeURIComponent(product.title)}" style="cursor: pointer;">
                   <div class="product-header">
                   <img src="${product.image}" alt="${product.title}" />
                                     </div>
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         : "Out of Stock"
                     }
                   </p>
-                  <div class="cart-controls">
+                  <div class="cart-controls" onclick="event.stopPropagation();">
                     <div class="quantity-controls">
                       <button class="decrement" data-index="${uniqueIndex}" ${
                   product.stock === 0 ? "disabled" : ""
@@ -239,6 +239,19 @@ document.addEventListener("DOMContentLoaded", () => {
           updateCartCount();
 
           alert(`${product.title} added to cart!`);
+        }
+      });
+
+      // NEW: Add event listener for product card clicks to navigate to single product page
+      container.addEventListener("click", (e) => {
+        const productCard = e.target.closest(".product__card");
+        
+        // If clicked on a product card but not on cart controls, navigate to single product
+        if (productCard && !e.target.closest('.cart-controls')) {
+          const productId = productCard.dataset.productId;
+          if (productId) {
+            window.location.href = `singleProduct.html?id=${productId}`;
+          }
         }
       });
 

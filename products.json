@@ -4,7 +4,8 @@
     "price": 65,
     "image": "assets/product-5.png",
     "category": "chairs",
-    "stock": 5
+    "stock": 5,
+    "description": "A sleek and versatile chair that adds a modern touch to any room."
   },
   {
     "title": "Stackable Chair",
@@ -15,14 +16,16 @@
     "new": true,
     "sustainable": true,
     "discount": "Summer Sale",
-    "discountPercent": 20
+    "discountPercent": 20,
+    "description": "Lightweight and durable, this stackable chair is perfect for saving space."
   },
   {
     "title": "Modern Chair",
     "price": 90,
     "image": "assets/product-15.png",
     "category": "chairs",
-    "stock": 0
+    "stock": 0,
+    "description": "A contemporary design chair that combines comfort with elegance."
   },
   {
     "title": "Hand Base Lamp",
@@ -30,14 +33,16 @@
     "image": "assets/product-4.png",
     "category": "lamps",
     "stock": 8,
-    "sustainable": true
+    "sustainable": true,
+    "description": "A unique lamp with a hand-shaped base, crafted for a bold statement look."
   },
   {
     "title": "Desk Lamp",
     "price": 40,
     "image": "assets/product-7.jpg",
     "category": "lamps",
-    "stock": 4
+    "stock": 4,
+    "description": "Compact and practical, this desk lamp provides focused lighting for work or study."
   },
   {
     "title": "Ceiling Lamp",
@@ -46,7 +51,8 @@
     "category": "lamps",
     "stock": 2,
     "discount": "Clearance",
-    "discountPercent": 10
+    "discountPercent": 10,
+    "description": "A modern ceiling lamp that brightens up any living space with style."
   },
   {
     "title": "Leather Sofa",
@@ -54,28 +60,32 @@
     "image": "assets/product-9.jpg",
     "category": "sofas",
     "stock": 6,
-    "new": true
+    "new": true,
+    "description": "A luxurious leather sofa offering comfort, durability, and timeless appeal."
   },
   {
     "title": "Modern Sofa",
     "price": 145,
     "image": "assets/product-10.jpg",
     "category": "sofas",
-    "stock": 3
+    "stock": 3,
+    "description": "Sleek lines and plush seating make this modern sofa a stylish centerpiece."
   },
   {
     "title": "Classic Sofa",
     "price": 200,
     "image": "assets/product-11.jpg",
     "category": "sofas",
-    "stock": 1
+    "stock": 1,
+    "description": "A traditional sofa with elegant design, crafted for comfort and sophistication."
   },
   {
     "title": "Coffee Table",
     "price": 95,
     "image": "assets/product-12.jpg",
     "category": "tables",
-    "stock": 5
+    "stock": 5,
+    "description": "A sturdy coffee table with a modern design, perfect for everyday use."
   },
   {
     "title": "Round Table",
@@ -83,13 +93,15 @@
     "image": "assets/product-13.jpg",
     "category": "tables",
     "stock": 7,
-    "sustainable": true
+    "sustainable": true,
+    "description": "An eco-friendly round table that blends functionality with contemporary design."
   },
   {
     "title": "Side Table",
     "price": 60,
     "image": "assets/product-14.jpg",
     "category": "tables",
-    "stock": 0
+    "stock": 0,
+    "description": "A compact side table ideal for small spaces and versatile home use."
   }
 ]
