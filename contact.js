@@ -58,6 +58,10 @@ navLinks.addEventListener("click", (e) => {
 
 const navSearch = document.getElementById("nav-search");
 navSearch.addEventListener("click", (e) => {
+  // Don't toggle if clicking on the input field or search results
+  if (e.target.tagName === 'INPUT' || e.target.closest('.search-results')) {
+    return;
+  }
   navSearch.classList.toggle("open");
 });
 

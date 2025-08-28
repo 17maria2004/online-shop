@@ -324,7 +324,16 @@ ul {
 
 @media(max-width:376px){
   .get_say_info_sec>li a{
-    font-size: 7px;
+    font-size: 6px;
+  }
+
+  .grid-70-30{
+    gap: 7px;
+  }
+
+  #contact-form input[type="text"], #contact-form input[type="email"], #contact-form input[type="tel"], textarea{
+    padding-left: 2px;
+    width: 109%;
   }
 }
 
@@ -350,7 +359,7 @@ ul {
   }
 
   .get_say_info_sec>li a {
-    font-size: 6px;
+    font-size: 5px;
   }
 
   .get_say_info_sec i {

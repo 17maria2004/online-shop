@@ -497,7 +497,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .nav__header {
@@ -534,6 +534,7 @@ nav {
   }
 
   .nav__search {
+    padding: 0;
     flex: 1;
     display: flex;
     align-items: center;
@@ -542,7 +543,7 @@ nav {
   }
 
   .nav__search input {
-    padding-block: 5px;
+    padding-block: 1px;
     outline: none;
     /*Removes(the blue border you see when you click inside an input).*/
     border: none;
@@ -554,7 +555,7 @@ nav {
   }
 
   .nav__search.open input {
-    width: 100%;
+    width: 65%;
     max-width: 15rem;
   }
 
@@ -614,6 +615,11 @@ nav {
 
   .deals__card:nth-child(1) {
     grid-column: unset;
+  }
+
+  .nav__links{
+    gap: 4rem;
+    font-size: 16px;
   }
 }
 
@@ -965,6 +971,14 @@ button:hover {
     display: flex;
     justify-content: center;
   }
+
+  .section__container{
+    padding: 3rem 1rem;
+  }
+
+  .product__grid{
+    margin-top: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1044,7 +1058,9 @@ button:hover {
   }
 
   .product__grid {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
     justify-content: space-between;
   }
 
@@ -1125,7 +1141,7 @@ button:hover {
   }
 
   .section__container {
-    padding: 3rem 1rem;
+    padding: 1rem;
   }
 
   .client__content .section__header {
@@ -1475,6 +1491,29 @@ button:hover {
   .product-image-container img {
     max-width: 300px;
   }
+
+  .product__card p{
+    margin-top: 3px;
+  }
+  
+  p{
+    margin-bottom: 0px;
+  }
+
+  .add-to-cart{
+    min-width: 74px;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .cart-controls{
+    gap: 60px;
+  }
+
+  button.login-btn{
+    display: flex;
+    align-items: center;
+  }
+  
 }
 
 @media (max-width: 376px) {
@@ -1615,7 +1654,7 @@ button:hover {
   }
 
   .product__card::before {
-    width: 45%;
+    width: 101%;
   }
 
   .badge--new,
@@ -1655,6 +1694,10 @@ button:hover {
 
   .cart-controls {
     gap: 21px;
+  }
+
+  .nav__logo .logo{
+    font-size: 20px;
   }
 
   .product-title {
