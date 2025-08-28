@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Search Component</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">ShopName</div>
+            <div class="nav__search" id="nav-search">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search for products...">
+                    <span class="clear-icon"><i class="ri-close-circle-fill"></i></span>
+                    <span class="search-icon"><i class="ri-search-line"></i></span>
+                    <div class="search-results"></div>
+                </div>
+            </div>
+            <!-- Added toggle button for mobile -->
+            <div class="search-toggle" id="search-toggle">
+                <i class="ri-search-line"></i>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>Search Component Features</h2>
+            <ul>
+                <li><span class="feature">Click to focus</span> Clicking the search icon automatically focuses the input field</li>
+                <li><span class="feature">Clear button</span> An X icon appears when typing to clear the input field</li>
+                <li><span class="feature">Live results</span> Search results appear as you type (after 2 characters)</li>
+                <li><span class="feature">Product navigation</span> Click on any product to navigate to its page</li>
+                <li><span class="feature">Enter to search</span> Press Enter to view all search results</li>
+                <li><span class="feature">Toggle search</span> Click the search icon to open/close the search bar (mobile)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>
